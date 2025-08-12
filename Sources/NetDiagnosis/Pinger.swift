@@ -33,7 +33,7 @@ public class Pinger {
     
     public let remoteAddr: IPAddr
     let sock: Int32
-    let serailQueue = DispatchQueue(label: "Pinger Queue", qos: .userInteractive)
+    let serialQueue = DispatchQueue(label: "Pinger Queue", qos: .userInteractive)
         
     public init(
         remoteAddr: IPAddr
@@ -67,7 +67,7 @@ public class Pinger {
         timeOut: TimeInterval = 1.0,
         callback: @escaping PingCallback
     ) {
-        self.serailQueue.async {
+        self.serialQueue.async {
             let result = self.ping(packetSize: packetSize, hopLimit: hopLimit, timeOut: timeOut)
             callback(result)
         }
