@@ -1,4 +1,3 @@
-```swift
 //
 //  Pinger+Trace.swift
 //  
@@ -407,4 +406,3 @@ extension sockaddr_storage {
         }
     }
 }
-```
